@@ -3,12 +3,18 @@
   "version": "0.0.1",
   "description": "Orientation week programme for all schools at nust",
   "private": "true",
-  "repository":{},
+  "repository": {},
   "scripts": {
-  	"start": "coffee server/orser.coffee"
+    "start": "coffee server/orser.coffee"
   },
   "engines": {
-  	"node": ">=0.8.x"
-  	},
-  "author": "José Quenum"
+    "node": ">=0.8.x"
+  },
+  "author": "José Quenum",
+  "devDependencies": {
+    "grunt-cli": "^0.1.13"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
+  }
 }
