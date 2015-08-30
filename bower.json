@@ -1,0 +1,21 @@
+{
+  "name": "orientation-week",
+  "version": "0.0.1",
+  "description": "Orientation week program for all schools at NUST",
+  "authors": [
+    "José G. Quenum <josum@icloud.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.2",
+    "foundation-icon-fonts": "*",
+    "jquery": "~2.1.4"
+  }
+}
