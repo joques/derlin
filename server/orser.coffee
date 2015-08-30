@@ -7,6 +7,7 @@ myEnv = process.env.NODE_ENV || 'development'
 bodyParser = require 'body-parser'
 compress = require 'compression'
 express = require 'express'
+fs = require 'fs'
 http2 = require 'http2'
 methodOverride = require 'method-override'
 morgan = require 'morgan'
@@ -26,9 +27,11 @@ app.use(methodOverride())
 
 app.use(express.static(__dirname + '/../app'))
 
+console.log __dirname
+
 serverOptions =
-	key: fs.readFileSync 'ssl/or.key'
-	cert: fs.readFileSync 'ssl/or.crt'
+	key: fs.readFileSync __dirname + '/ssl/orient.key'
+	cert: fs.readFileSync __dirname + '/ssl/orient.crt'
 	requestCert: true
 	passphrase: 'when is your orientation week'
 
@@ -36,4 +39,4 @@ server = http2.createServer serverOptions, app
 portNumber = 5491
 
 server.listen portNumber, () ->
-	console.log "Orientation week application now running -- server listening on port %d in mode %s".underline.green, portNumber, app.settings.env
+	console.log "Orientation week application now running -- server listening on port %d in mode %s", portNumber, app.settings.env
