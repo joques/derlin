@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "description": "Orientation week programme for all schools at nust",
   "private": "true",
-  "repository": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh@josequenum@rwenzori:orientation-week-nust"
+    },
   "scripts": {
     "start": "coffee server/orser.coffee"
   },

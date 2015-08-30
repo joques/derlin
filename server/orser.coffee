@@ -1,3 +1,5 @@
+'use strict'
+
 # This is the main class of the Orientation week application
 # 
 # @author José G. Quenum
@@ -27,7 +29,7 @@ app.use(methodOverride())
 
 app.use(express.static(__dirname + '/../app'))
 
-console.log __dirname
+# define the routes
 
 serverOptions =
 	key: fs.readFileSync __dirname + '/ssl/orient.key'
