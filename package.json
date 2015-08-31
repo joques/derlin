@@ -6,7 +6,7 @@
   "repository": {
     "type": "git",
     "url": "git+ssh@josequenum@rwenzori:orientation-week-nust"
-    },
+  },
   "scripts": {
     "start": "coffee server/orser.coffee"
   },
@@ -15,7 +15,7 @@
   },
   "author": "José G Quenum <josum@icloud.com>",
   "devDependencies": {
-    "grunt-cli": "^0.1.13"
+    "grunt": "^0.4.5"
   },
   "dependencies": {
     "body-parser": "^1.13.3",
