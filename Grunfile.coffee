@@ -1,9 +1,23 @@
-module.exports(grunt) ->
-	# define a few constants about the target of the build rule
-	TARGET = 'app/js'
+modulde.exports = (grunt) ->
+	gruntConfig =
+		pkg:
+			grunt.file.readJSON 'package.json'
+		clean:
+			build:
+				src: ['app/js']
+		coffee:
+			glob_to_multiple:
+				expand: true
+				cwd: 'app/coffee'
+				src: '**/*.coffee'
+				dest: 'app/js'
+				ext: '.js'
 
-	# will add the configuration
+	grunt.initConfig gruntConfig
+	
+	grunt.loadNpmTasks 'grunt-contrib-clean'
+	grunt.loadNpmTasks 'grunt-contrib-coffee'
 
-	# define the tasks to be executed
-	# add two tasks: clean and build for the angular§
-	# then the default rule
+	grunt.registerTask ('default', ['clean', 'coffee'])
+
+	null

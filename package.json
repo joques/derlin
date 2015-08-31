@@ -15,7 +15,9 @@
   },
   "author": "José G Quenum <josum@icloud.com>",
   "devDependencies": {
-    "grunt": "^0.4.5"
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-coffee": "^0.13.0"
   },
   "dependencies": {
     "body-parser": "^1.13.3",
