@@ -30,6 +30,7 @@ app.use(methodOverride())
 app.use(express.static(__dirname + '/../app'))
 
 # define the routes
+require('../app/routes/view-routes')(app)
 
 serverOptions =
 	key: fs.readFileSync __dirname + '/ssl/orient.key'

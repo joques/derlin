@@ -13,4 +13,5 @@ orApp.config ['$routeProvider', '$locationProvider', ($routeProvider, $locationP
 	$locationProvider.html5Mode true
 ]
 
-angular.bootstrap document, ['orientationw']
+angular.element(document).ready () ->
+	angular.bootstrap document, ['orientationw']
