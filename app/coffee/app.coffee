@@ -1,17 +1,18 @@
 'use strict'
 
-orApp = angular.module 'orientationw', ['ngCookies', 'ngResource', 'ngRoute', 'mm.foundation', 'ngInfiniteScroll']
+orApp = angular.module 'orientationw', ['ngRoute', 'ngResource', 'mm.foundation', 'infinite-scroll']
 
-orApp.config ['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) ->
-	$routeProvider.when '/',
-		templateUrl: 'partials/main.html'
-		controller: 'MainController'
+orApp.config(['$routeProvider', ($routeProvider) ->
+	$routeProvider.when('/', {
+		templateUrl: 'partials/main.html',
+		controller: 'FirstController'
+		})
+	
+	$routeProvider.otherwise({redirectTo: '/'})
+	])
 
-	$routeProvider.otherwise
-		redirectTo: '/'
-
-	$locationProvider.html5Mode true
-]
-
-angular.element(document).ready () ->
-	angular.bootstrap document, ['orientationw']
+orApp.controller('FirstController', ['$scope', ($scope) ->
+	$scope.showLogin = true
+	$scope.isLoggedIn = () =>
+		false
+	])

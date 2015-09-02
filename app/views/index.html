@@ -7,42 +7,27 @@
 		<link rel="stylesheet" type="text/css" href="/bower_components/foundation/css/normalize.min.css">
 		<link rel="stylesheet" type="text/css" href="/bower_components/foundation-icon-fonts/foundation-icons.css">
 		<link rel="stylesheet" type="text/css" href="/styles/orienter.css">
+		<script src="/bower_components/angular/angular.min.js"></script>
+		<script src="/bower_components/angular-route/angular-route.min.js"></script>
+		<script src="/bower_components/angular-foundation/mm-foundation.js"></script>
+		<script src="/bower_components/angular-cookies/angular-cookies.min.js"></script>
+		<script src="/bower_components/angular-resource/angular-resource.min.js"></script>
+		<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="/bower_components/modernizr/modernizr.js"></script>
+		<script src="/bower_components/foundation/js/foundation.min.js"></script>
+		<script src="/bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js"></script>
+		<script src="/js/app.js"></script>
+		<script>
+			$(document).foundation();
+		</script>
 	</head>
 	<body>
 		<!-- add navbar here -->
-		<nav class="top-bar foundation-bar" data-topbar>
-			<ul class="title-area">
-				<li class="name">
-					<span data-tooltip class="has-tip" title="try resizing your browser and and watch the grid resize itself">
-						<h1 class="show-for-small-only">
-							<a href="/">Orientation Week</a>
-						</h1>
-					</span>
-					<span data-tooltip class="has-tip" title="try resizing your browser and and watch the grid resize itself">
-						<h1 class="show-for-medium-only">
-							<a href="/">Orientation Week</a>
-						</h1>
-					</span>
-					<span data-tooltip class="has-tip" title="try resizing your browser and and watch the grid resize itself">
-						<h1 class="show-for-large-only">
-							<a href="/">Orientation Week</a>
-						</h1>
-					</span>
-				</li>
-			</ul>
-			<section class="top-bar-section">
-				<ul class="right">
-					<li><a href="/"></a><i class="fi-home"></i>&nbsp;Home</li>
-					<li><a href="/login" ng-show="!loggedIn()"><i class="fi-at-sign"></i>&nbsp;Log In</a></li>
-					<li><a href="/logout" ng-show="loggedIn()"><i class=""></i>&nbsp;Log Out</a></li>
-				</ul>
-			</section>
-		</nav>
 		<div class="wrap">
 			<div ng-view></div>
 			<div class="push"></div>
 		</div>
-		<footer class="row footer">
+		<footer class="row">
 			<div class="large-12 columns">
 				<hr>
 				<div class="row">
@@ -57,13 +42,5 @@
 				</div>
 			</div>
 		</footer>
-		<script src="/bower_components/angular/angular.min.js"></script>
-		<script src="/bower_components/jquery/dist/jquery.min.js"></script>
-		<script src="/bower_components/modernizr/modernizr.js"></script>
-		<script src="/bower_components/foundation/js/foundation.min.js"></script>
-		<script src="/js/app.js"></script>
-		<script>
-			$(document).foundation();
-		</script>
 	</body>
 </html>

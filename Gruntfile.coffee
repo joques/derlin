@@ -1,4 +1,4 @@
-modulde.exports = (grunt) ->
+module.exports = (grunt) ->
 	gruntConfig =
 		pkg:
 			grunt.file.readJSON 'package.json'
@@ -18,4 +18,4 @@ modulde.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-contrib-clean'
 	grunt.loadNpmTasks 'grunt-contrib-coffee'
 
-	grunt.registerTask ('default', ['clean', 'coffee'])
+	grunt.registerTask('default', ['clean', 'coffee'])
