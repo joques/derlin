@@ -1,0 +1,33 @@
+<div ng-controller="LoginController">
+	<div class="large-3 large-centered columns">
+		<div class="login-box">
+			<div class="row">
+				<div class="large-12 columns">
+					<form name="loginForm">
+						<h2 class="text-center">Log In</h2>
+						<p class="small">Please enter your username and password for authentication</p>
+						<div class="row">
+							<div class="large-12 columns">
+								<input type="text" ng-model="login.username" name="username" placeholder="Username" autofocus="on"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="large-12 columns">
+								<input type="password" ng-model="login.password" name="password" placeholder="placeholder"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="large-6 columns">
+								<a href="/signup" class="button radius">Register</a>
+							</div>
+							<div class="large-6 columns">
+								<button class='button radius' ng-click="signIn()">Login</button>
+								<!-- <a class="button radius" ng-click="signIn($event)">Login</a> -->
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

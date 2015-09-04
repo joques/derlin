@@ -36,9 +36,44 @@
 	background-color: #2e8b57;
 }
 
+.marketing-white {
+	background-color: #ffffff;
+}
+
+.marketing-lightsteelblue {
+	background-color: #b0c4de;
+}
+
 /* title style*/
 
 .orient-title {
 	color: #f8f8ff;
 	font-size: 60px;
+}
+
+.school-title {
+	color: #b0c4de;
+	font-size: 16px;
+}
+
+/* time table */
+
+.timetable {
+	width: 100%;
+}
+
+.timetable thead th {
+	text-align: center;
+	color: #fa0872;
+}
+
+.timetable tbody td {
+	text-align: center;
+}
+
+.login-box{
+	background: #fff;
+  	border: 1px solid #ddd; 
+  	margin: 100px 0;
+  	padding: 40px 20px 0 20px;
 }
