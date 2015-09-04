@@ -1,5 +1,7 @@
 'use strict'
 
+bcrypt = require 'bcrypt'
+
 exports.PasswordHandler = class PasswordHandler
 	constructor: ->
 		# 

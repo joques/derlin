@@ -1,3 +1,5 @@
+'use strict'
+
 UserModel = require('../models/user').UserModel
 
 exports.UsersController = class UsersController

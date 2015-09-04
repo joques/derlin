@@ -1,3 +1,5 @@
+'use strict'
+
 exports.EventModel = class EventModel
 	constructor: (@dataManager) ->
 		# 

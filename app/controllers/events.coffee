@@ -1,3 +1,5 @@
+'use strict'
+
 EventModel = require('../models/event').EventModel
 
 exports.EventsController = class EventsController

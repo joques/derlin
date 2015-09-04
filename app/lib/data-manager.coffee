@@ -5,6 +5,15 @@ Couchbase = require 'couchbase'
 
 exports.DataManager = class DataManager
 
+	_findUser = (callback) ->
+		console.log "Second step of fetching all events"
+		_getDataBucket.call @, (bucketError, dataBucket) =>
+			if bucketError?
+				callback bucketError, null
+			else
+				dataBucket.get username, (findError, findResult) =>
+					callback findError, findResult
+
 	_getAllEvents = (callback) ->
 		console.log "Second step of fetching all events"
 		_getDataBucket.call @, (bucketError, dataBucket) =>
@@ -84,3 +93,8 @@ exports.DataManager = class DataManager
 		console.log "first step in fetch all events from the db..."
 		_getAllEvents.call @, (allEventsError, allEvents) =>
 			callback allEventsError, allEvents
+
+	findUser: (username, callback) =>
+		console.log "finding user #{username}..."
+		_findUser.call @, username, (findError, findResult) =>
+			callback findError, findResult

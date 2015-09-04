@@ -1,3 +1,7 @@
+'use strict'
+
+PasswordHandler = require('../lib/password-handler').PasswordHandler
+
 exports.UserModel = class UserModel
 	constructor: (@dataManager) ->
 		# 
@@ -9,5 +13,12 @@ exports.UserModel = class UserModel
 				callback findError, null
 			else
 				userPassword = findResult.password
-				# 
-				callback null, {user: username}
+				new PasswordHandler().verifyPassword authenticationData.password, userPassword, (verificationError, verificationRes) =>
+					if verificationError?
+						callback verificationError, null
+					else
+						if verificationRes
+							callback null, {user: username}
+						else
+							authenticationError = new Error("Authentication failed for user #{authenticationData.username}")
+							callback authenticationError, null
