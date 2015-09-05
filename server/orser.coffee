@@ -28,7 +28,8 @@ app.set 'views', __dirname + '/../app/views'
 app.engine('html', require('ejs').renderFile)
 
 app.use(compress())
-app.use(bodyParser.urlencoded({extended: true}))
+# app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
 app.use(methodOverride())
 
 app.use(express.static(__dirname + '/../app'))

@@ -5,8 +5,8 @@ Couchbase = require 'couchbase'
 
 exports.DataManager = class DataManager
 
-	_findUser = (callback) ->
-		console.log "Second step of fetching all events"
+	_findUser = (username, callback) ->
+		console.log "finding user in db manager... #{username}"
 		_getDataBucket.call @, (bucketError, dataBucket) =>
 			if bucketError?
 				callback bucketError, null

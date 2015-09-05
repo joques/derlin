@@ -29,10 +29,11 @@ orApp.config ($locationProvider, $routeProvider) ->
 	} 
 	$locationProvider.hashPrefix '!'
 
-orApp.controller 'MainController', ($scope) ->
+orApp.controller 'MainController', ($scope, $cookieStore) ->
 	$scope.showLogin = true
 	$scope.isLoggedIn = () =>
-		false
+		username = $cookieStore.get 'username'
+		return username?
 
 orApp.controller 'SCIDailyProgController', ($scope, Events) ->
 	$scope.events = Events.query()
@@ -41,10 +42,15 @@ orApp.controller 'LoginController', ($scope, $http, $location, $cookieStore) ->
 	$scope.login = {}
 	$scope.signIn = =>
 		alert "got login data"
-		$http.post('/api/authenticate', $scope.login).
+		alert $scope.login.username
+		alert $scope.login.password
+		$http.post('/api/authenticate', JSON.stringify($scope.login)).
 			success((loginData, status, headers, config) ->
+				$cookieStore.put 'username', loginData.user
 				$location.path '/'
 			).
 			error((errorData, status, headers, config) ->
+				alert "Authentication failed: #{errorData.error}"
+				$cookieStore.put 'username', undefined
 				$location.path '/'
 			)
