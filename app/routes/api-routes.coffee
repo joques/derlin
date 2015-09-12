@@ -18,10 +18,8 @@ module.exports = (app, dataManager) ->
 		console.log request.body
 		new UsersController(dataManager).authenticate request.body, (authenticationError, authenticationResult) =>
 			if authenticationError?
-				response.json 500, {error: authenticationError.message}
+				# response.json 500, {error: authenticationError.message}
+				response.status(500).json({error: authenticationError.message})
 			else
-				response.json authenticationResult
-			
-
-
-			
+				response.status(200).json(authenticationResult)
+				# response.json authenticationResult

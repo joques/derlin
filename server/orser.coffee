@@ -14,7 +14,6 @@ http2          = require 'http2'
 methodOverride = require 'method-override'
 morgan         = require 'morgan'
 
-console.log __dirname
 
 DataManager = require('../app/lib/data-manager').DataManager
 
@@ -28,7 +27,7 @@ app.set 'views', __dirname + '/../app/views'
 app.engine('html', require('ejs').renderFile)
 
 app.use(compress())
-# app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 app.use(methodOverride())
 
