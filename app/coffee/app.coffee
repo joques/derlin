@@ -1,6 +1,8 @@
 'use strict'
 
-orApp = angular.module 'orientationw', ['ngCookies','ngRoute','ngResource']
+# need to bring back the infinite scroll package
+
+orApp = angular.module 'orientationw', ['ngCookies','ngRoute','ngResource', 'infinite-scroll']
 
 orApp.factory 'Events', ($resource) ->
 	return $resource('/api/events/:id')
@@ -37,6 +39,7 @@ orApp.controller 'MainController', ($scope, $cookieStore) ->
 
 orApp.controller 'SCIDailyProgController', ($scope, Events) ->
 	$scope.events = Events.query()
+	$scope.
 
 orApp.controller 'LoginController', ($scope, $http, $location, $cookieStore) ->
 	$scope.login = {}
